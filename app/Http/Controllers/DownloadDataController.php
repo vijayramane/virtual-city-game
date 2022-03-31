@@ -41,5 +41,7 @@ class DownloadDataController extends Controller
         }
 
         $writer->close();
+
+        return back()->with('success', 'Data has been downloaded');
     }
 }

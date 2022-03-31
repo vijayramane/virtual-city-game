@@ -20,4 +20,4 @@ Route::get('/', function () {
 
 Route::get('/game-data', [DownloadDataController::class, 'index']);
 //download data
-Route::post('/download', [DownloadDataController::class, 'download'])->name('download');
+Route::get('/download', [DownloadDataController::class, 'download'])->name('download');
