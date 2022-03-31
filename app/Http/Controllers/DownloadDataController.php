@@ -42,6 +42,6 @@ class DownloadDataController extends Controller
 
         $writer->close();
 
-        return back()->with('success', 'Data has been downloaded');
+        return response()->download(public_path('game-data.xlsx'));
     }
 }
