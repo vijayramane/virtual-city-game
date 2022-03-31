@@ -34,6 +34,7 @@
                                     <thead>
                                         <tr>
                                             <th class="px-4 py-2">Id</th>
+                                            <th class="px-4 py-2">Username</th>
                                             <th class="px-4 py-2">Location</th>
                                             <th class="px-4 py-2">Scene</th>
                                             <th class="px-4 py-2">Right Attempt</th>
@@ -48,6 +49,7 @@
                                         @foreach ($game_data as $data)
                                             <tr>
                                                 <td class="border px-4 py-2">{{ $data->id }}</td>
+                                                <td class="border px-4 py-2">{{ $data->username }}</td>
                                                 <td class="border px-4 py-2">{{ $data->location }}</td>
                                                 <td class="border px-4 py-2">{{ $data->scene }}</td>
                                                 <td class="border px-4 py-2">{{ $data->right_attempt }}</td>

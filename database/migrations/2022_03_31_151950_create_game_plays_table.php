@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('game_plays', function (Blueprint $table) {
             $table->id();
+            $table->string('username', 64);
             $table->string('location', 64);
             $table->string('scene', 64);
             $table->integer('right_attempt')->nullable();

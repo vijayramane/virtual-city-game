@@ -25,11 +25,12 @@ class DownloadDataController extends Controller
         $writer = WriterEntityFactory::createXLSXWriter();
         $writer->openToBrowser('game-data.xlsx');
 
-        $headerRow = WriterEntityFactory::createRowFromArray(['Location', 'Scene', 'Right Attempt', 'Wrong Attempt', 'Total Attempt', 'Total Time']);
+        $headerRow = WriterEntityFactory::createRowFromArray(['Username', 'Location', 'Scene', 'Right Attempt', 'Wrong Attempt', 'Total Attempt', 'Total Time']);
         $writer->addRow($headerRow);
 
         foreach ($gamePlays as $gamePlay) {
             $row = WriterEntityFactory::createRowFromArray([
+                $gamePlay->username,
                 $gamePlay->location,
                 $gamePlay->scene,
                 $gamePlay->right_attempt,

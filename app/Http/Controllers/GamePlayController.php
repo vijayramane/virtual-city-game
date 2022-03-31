@@ -36,6 +36,7 @@ class GamePlayController extends Controller
     {
         // validate request
         $validatedData = $request->validate([
+            'username' => 'required|string|max:64',
             'location' => 'required|string|max:64',
             'scene' => 'required|string|max:64',
             'right_attempt' => 'nullable|integer',
@@ -45,6 +46,7 @@ class GamePlayController extends Controller
         ]);
 
         $gamePlay = new GamePlay();
+        $gamePlay->username = $request->username;
         $gamePlay->location = $request->location;
         $gamePlay->scene = $request->scene;
         $gamePlay->right_attempt = $request->right_attempt;
@@ -100,6 +102,7 @@ class GamePlayController extends Controller
 
         if ($gamePlay) {
             // update game play
+            $gamePlay->username = $request->username;
             $gamePlay->location = $request->location;
             $gamePlay->scene = $request->scene;
             $gamePlay->right_attempt = $request->right_attempt;
