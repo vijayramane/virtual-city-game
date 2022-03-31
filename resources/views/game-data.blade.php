@@ -20,46 +20,60 @@
             }
         </style>
     </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            
-            {{-- table in tailwind css --}}
-            <div class="table-responsive">
-                <table class="table-auto border">
-                    <thead>
-                        <tr>
-                            <th class="px-4 py-2">Id</th>
-                            <th class="px-4 py-2">Location</th>
-                            <th class="px-4 py-2">Scene</th>
-                            <th class="px-4 py-2">Right Attempt</th>
-                            <th class="px-4 py-2">Wrong Attempt</th>
-                            <th class="px-4 py-2">Total Attempt</th>
-                            <th class="px-4 py-2">Total Time</th>
-                            <th class="px-4 py-2">Created At</th>
-                            <th class="px-4 py-2">Updated At</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($game_data as $data)
-                            <tr>
-                                <td class="border px-4 py-2">{{ $data->id }}</td>
-                                <td class="border px-4 py-2">{{ $data->location }}</td>
-                                <td class="border px-4 py-2">{{ $data->scene }}</td>
-                                <td class="border px-4 py-2">{{ $data->right_attempt }}</td>
-                                <td class="border px-4 py-2">{{ $data->wrong_attempt }}</td>
-                                <td class="border px-4 py-2">{{ $data->total_attempt }}</td>
-                                <td class="border px-4 py-2">{{ $data->total_time }}</td>
-                                <td class="border px-4 py-2">{{ $data->created_at }}</td>
-                                <td class="border px-4 py-2">{{ $data->updated_at }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-
-                {{-- pagination --}}
-                <div class="flex justify-center">
-                    {{ $game_data->links() }}
+    <body>
+        
+        {{-- container --}}
+        <div class="container">
+            {{-- card --}}
+            <div class="card">
+                {{-- card-header --}}
+                <div class="card-header">
+                    <h3>Game Data</h3>
+                    {{-- download button --}}
+                    <a href="{{ route('download') }}" class="btn btn-primary">Download</a>
                 </div>
+                {{-- card-body --}}
+                <div class="card-body">
+                    {{-- table --}}
+                            <div class="table-responsive">
+                                <table class="table-auto border">
+                                    <thead>
+                                        <tr>
+                                            <th class="px-4 py-2">Id</th>
+                                            <th class="px-4 py-2">Location</th>
+                                            <th class="px-4 py-2">Scene</th>
+                                            <th class="px-4 py-2">Right Attempt</th>
+                                            <th class="px-4 py-2">Wrong Attempt</th>
+                                            <th class="px-4 py-2">Total Attempt</th>
+                                            <th class="px-4 py-2">Total Time</th>
+                                            <th class="px-4 py-2">Created At</th>
+                                            <th class="px-4 py-2">Updated At</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($game_data as $data)
+                                            <tr>
+                                                <td class="border px-4 py-2">{{ $data->id }}</td>
+                                                <td class="border px-4 py-2">{{ $data->location }}</td>
+                                                <td class="border px-4 py-2">{{ $data->scene }}</td>
+                                                <td class="border px-4 py-2">{{ $data->right_attempt }}</td>
+                                                <td class="border px-4 py-2">{{ $data->wrong_attempt }}</td>
+                                                <td class="border px-4 py-2">{{ $data->total_attempt }}</td>
+                                                <td class="border px-4 py-2">{{ $data->total_time }}</td>
+                                                <td class="border px-4 py-2">{{ $data->created_at }}</td>
+                                                <td class="border px-4 py-2">{{ $data->updated_at }}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                
+                                {{-- pagination --}}
+                                <div class="flex justify-center">
+                                    {{ $game_data->links() }}
+                                </div>
+                </div>
+                </div>
+            </div>
         </div>
-    </body>
+
 </html>
