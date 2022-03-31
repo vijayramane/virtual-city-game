@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\GamePlay;
 
-use Box\Spout\Writer\Common\Creator\WriterEntityFactory;
+use Illuminate\Http\Request;
 use Box\Spout\Common\Entity\Row;
+use Box\Spout\Writer\Common\Creator\WriterEntityFactory;
 
 class DownloadDataController extends Controller
 {
