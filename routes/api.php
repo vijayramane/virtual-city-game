@@ -17,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('/game-play', [GamePlayController::class, 'index']);
+Route::post('/game-play', [GamePlayController::class, 'store']);
+Route::get('/game-play/{id}', [GamePlayController::class, 'show']);
+Route::put('/game-play/{id}', [GamePlayController::class, 'update']);
+Route::delete('/game-play/{id}', [GamePlayController::class, 'destroy']);
