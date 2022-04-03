@@ -36,7 +36,7 @@ class DownloadDataController extends Controller
                 $gamePlay->right_attempt,
                 $gamePlay->wrong_attempt,
                 $gamePlay->total_attempt,
-                $gamePlay->total_time,
+                gmdate("H:i:s", $gamePlay->total_time),
                 $gamePlay->created_at
             ]);
             $writer->addRow($row);

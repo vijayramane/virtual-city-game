@@ -41,7 +41,7 @@
                                             <th class="px-4 py-2">Wrong Attempt</th>
                                             <th class="px-4 py-2">Total Attempt</th>
                                             <th class="px-4 py-2">Total Time</th>
-                                            <th class="px-4 py-2">Created At</th>
+                                            <th class="px-4 py-2">Date</th>
                                             {{-- <th class="px-4 py-2">Updated At</th> --}}
                                         </tr>
                                     </thead>
@@ -55,7 +55,7 @@
                                                 <td class="border px-4 py-2">{{ $data->right_attempt }}</td>
                                                 <td class="border px-4 py-2">{{ $data->wrong_attempt }}</td>
                                                 <td class="border px-4 py-2">{{ $data->total_attempt }}</td>
-                                                <td class="border px-4 py-2">{{ $data->total_time }}</td>
+                                                <td class="border px-4 py-2">{{ gmdate("H:i:s", $data->total_time) }}</td>
                                                 <td class="border px-4 py-2">{{ $data->created_at }}</td>
                                                 {{-- <td class="border px-4 py-2">{{ $data->updated_at }}</td> --}}
                                             </tr>
