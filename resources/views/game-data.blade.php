@@ -42,7 +42,7 @@
                                             <th class="px-4 py-2">Total Attempt</th>
                                             <th class="px-4 py-2">Total Time</th>
                                             <th class="px-4 py-2">Created At</th>
-                                            <th class="px-4 py-2">Updated At</th>
+                                            {{-- <th class="px-4 py-2">Updated At</th> --}}
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -57,7 +57,7 @@
                                                 <td class="border px-4 py-2">{{ $data->total_attempt }}</td>
                                                 <td class="border px-4 py-2">{{ $data->total_time }}</td>
                                                 <td class="border px-4 py-2">{{ $data->created_at }}</td>
-                                                <td class="border px-4 py-2">{{ $data->updated_at }}</td>
+                                                {{-- <td class="border px-4 py-2">{{ $data->updated_at }}</td> --}}
                                             </tr>
                                         @endforeach
                                     </tbody>
