@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('username', 64);
             $table->string('location', 64);
-            $table->string('scene', 64);
+            $table->integer('scene');
             $table->integer('right_attempt')->nullable();
             $table->integer('wrong_attempt')->nullable();
             $table->integer('total_attempt')->nullable();

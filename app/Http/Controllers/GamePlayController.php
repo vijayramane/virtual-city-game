@@ -38,10 +38,9 @@ class GamePlayController extends Controller
         $validatedData = $request->validate([
             'username' => 'required|string|max:64',
             'location' => 'required|string|max:64',
-            'scene' => 'required|string|max:64',
+            'scene' => 'required|integer',
             'right_attempt' => 'nullable|integer',
             'wrong_attempt' => 'nullable|integer',
-            // 'total_attempt' => 'nullable|integer',
             'total_time' => 'nullable|integer',
         ]);
 
@@ -92,11 +91,11 @@ class GamePlayController extends Controller
     {
         // validate request
         $validatedData = $request->validate([
+            'username' => 'nullable|string|max:64',
             'location' => 'nullable|string|max:64',
-            'scene' => 'nullable|string|max:64',
+            'scene' => 'nullable|integer',
             'right_attempt' => 'nullable|integer',
             'wrong_attempt' => 'nullable|integer',
-            // 'total_attempt' => 'nullable|integer',
             'total_time' => 'nullable|integer',
         ]);
 
