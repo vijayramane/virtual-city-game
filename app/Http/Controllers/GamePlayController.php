@@ -34,6 +34,7 @@ class GamePlayController extends Controller
      */
     public function store(Request $request)
     {
+        info($request->all());
         // validate request
         $validatedData = $request->validate([
             'username' => 'required|string|max:64',
@@ -43,6 +44,11 @@ class GamePlayController extends Controller
             'wrong_attempt' => 'nullable|integer',
             'total_time' => 'nullable|integer',
         ]);
+
+        // return validation error
+        if ($validatedData) {
+            return response()->json($validatedData, 422);
+        }
 
         $gamePlay = new GamePlay();
         $gamePlay->username = $request->username;
